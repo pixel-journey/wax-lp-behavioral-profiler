@@ -1,23 +1,16 @@
-# Adds, removes, and holds
+# wax-lp-behavioral-profiler
 
-**Trust label:** `educational-reference`  
-**Catalog:** [wax-ecosystem-blueprint-catalog](https://github.com/pixel-journey/wax-ecosystem-blueprint-catalog)
+> **Trust label:** `educational-reference`  
+> **Status:** Pure rules + education pass (2026-10-31)
 
-Churn when removes outnumber adds. Not a fee score and not an Alcor parse.
+Count **add / remove / hold** moves → `steady` or **churn** (removes > adds).
 
-The earlier README described a live product. This tree does not ship that.
+Not a fee score and not an Alcor history parse. Demo is offline.
 
-## What is actually in the repo
+```bash
+npm test && npm run dev
+```
 
-| Piece | Role |
-| --- | --- |
-| `src/profile.ts` | The pure rules |
-| `src/profile.test.ts` | The claims in the verification log |
-| `src/usecases.ts` | HTTP requests, built and not sent |
-| `src/Demo.tsx` | Offline page |
+[POLICY.md](./POLICY.md)
 
-`npm test` runs the rules. `npm run dev` opens the page.
-
-## Queries and unsigned transactions
-
-`executed` is false. This repo did not call any host. No transaction is invented.
+MIT — Pixel Journey
