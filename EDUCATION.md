@@ -30,7 +30,7 @@ profile(["add", "add", "remove"])
 | --- | --- |
 | empty list | `empty` |
 | removes > adds | `churn` |
-| removes ≤ adds (and non-empty) | `steady` |
+| removes ≤ adds (and non-empty) | `steady`. `profile(["add", "remove"])` is locked as `steady`, not `churn`. |
 | unknown string | throws |
 
 Holds are counted but do not affect the label.

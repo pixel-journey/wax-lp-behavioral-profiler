@@ -1,7 +1,7 @@
 # Count add / remove / hold moves into a steady or churn label
 
 > **Trust:** `educational-reference`  
-> **Catalog:** [wax-ecosystem-blueprint-catalog](https://github.com/pixel-journey/wax-ecosystem-blueprint-catalog)
+> **Catalog:** `wax-ecosystem-blueprint-catalog` (private index; not this public course)
 
 **One-sentence goal:** Teach a pure count of caller-supplied liquidity moves that labels the list `empty`, `steady`, or `churn` when removes outnumber adds — without claiming a live Alcor profile.
 
@@ -9,12 +9,18 @@
 
 The course is [EDUCATION.md](EDUCATION.md) (beginner, intermediate, masterclass).
 
+## Related
+
+- [collect labels](https://github.com/pixel-journey/wax-lp-fee-lifecycle-auditor) — the move after a collect, not this count
+- [moved share](https://github.com/pixel-journey/wax-alcor-pool-migration-tracker)
+- [alcor-exchange](https://github.com/alcor-exchange) — not parsed here
+
 ## What is true (executed)
 
 | Rule | Result |
 | --- | --- |
 | `profile(SAMPLE_MOVES)` | `{ adds: 1, removes: 2, holds: 1, label: "churn" }` |
-| `profile(["add", "add", "remove"])` | label `steady` |
+| `profile(["add", "remove"])` | label `steady` (equal is not churn) |
 | `profile([])` | label `empty` |
 | unknown move | throws |
 | usecases | requests stay unsent |
@@ -46,10 +52,5 @@ npm run dev
 **Do not** call Alcor or Hyperion from the unit tests.  
 **Do not** invent a fee, APY, or risk score from these three counts.  
 **Do not** treat a transfer on `swap.alcor` as automatically an add or a remove.
-
-## Related
-
-- `wax-lp-fee-lifecycle-auditor`
-- `wax-alcor-pool-migration-tracker`
 
 MIT — Pixel Journey
